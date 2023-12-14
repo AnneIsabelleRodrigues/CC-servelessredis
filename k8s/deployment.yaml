@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-dash-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-dash-app
+  template:
+    metadata:
+      labels:
+        app: redis-dash-app
+    spec:
+      containers:
+        - name: redis-dash-app-container
+          imagePullPolicy: Always
+          image: annecarvalho/redis-dash:latest
+          ports:
+            - containerPort: 32168

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: outputkey
+  namespace: annecarvalho
+data:
+  REDIS_OUTPUT_KEY: 'annecarvalho-proj3-output'
